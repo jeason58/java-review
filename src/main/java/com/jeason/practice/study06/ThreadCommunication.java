@@ -1,10 +1,9 @@
 package com.jeason.practice.study06;
 
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @description:
+ * @description: 使用共享变量flag完成奇偶线程间的通信，
  * @author: jeason·wang
  * @date: 2018-07-31 16:51
  **/
@@ -23,7 +22,7 @@ public class ThreadCommunication {
         lock.lock();
         if (tc.flag) {
           if (tc.start <= tc.maxValue) {
-            System.out.println(tc.start++);
+            System.out.printf("%4s : %2d\n", Thread.currentThread().getName(), tc.start++);
           }
           tc.flag = false;
         }
@@ -38,7 +37,7 @@ public class ThreadCommunication {
         lock.lock();
         if (!tc.flag) {
           if (tc.start <= tc.maxValue) {
-            System.out.println(tc.start++);
+            System.out.printf("%4s : %2d\n", Thread.currentThread().getName(), tc.start++);
           }
           tc.flag = true;
         }
