@@ -1,7 +1,7 @@
 package com.jeason.practice.study01;
 
 /**
- * @description:
+ * @description: volatile关键字只能保证共享变量count的修改在线程之间的可见性，但并不能保证count++操作的原子性
  * @author: jeason·wang
  * @date: 2018-07-23 10:09
  **/
