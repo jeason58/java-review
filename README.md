@@ -1,9 +1,8 @@
 # java-review `重学java`
-- 包含java语言的各种特性用法的demo，以及一些数据结构和算法的demo实现，jdk版本基于1.8，项目中基础框架基于springboot
-
+包含java语言的各种特性用法的demo，以及一些数据结构和算法的demo实现，jdk版本基于1.8，项目中基础框架基于springboot
 ===
-- ## packages
-### algorithm `算法包`
+## packages
+- ### algorithm `算法包`
 ### concurrency `并发包`
 ### jvm `jvm包`
 ### listset `集合框架包`
