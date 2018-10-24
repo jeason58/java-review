@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.jeason</groupId>
-	<artifactId>practice</artifactId>
+	<groupId>com.jeason.java</groupId>
+	<artifactId>java-review</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>jeason-practice</name>
-	<description>practice project for Spring Boot</description>
+	<name>java-review</name>
+	<description>review java for get more information, based on spring-boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
