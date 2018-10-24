@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author: jeason·wang
  * @date: 2018-07-23 18:17
  **/
-public class ConcurrentHashMapStudy {
+public class ConcurrentHashMapDemo {
 
   public static void main(String[] args) {
     Map map = new ConcurrentHashMap();

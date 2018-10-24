@@ -8,12 +8,16 @@ import java.util.LinkedHashMap;
  * @author: jeason·wang
  * @date: 2018-07-24 14:20
  **/
-public class LinkedHashMapStudy {
+public class LinkedHashMapDemo {
 
   public static void main(String[] args) {
-    HashMap map = new LinkedHashMap();
+    HashMap<String, Object> map = new LinkedHashMap();
 
     map.put("name", "jeasonwang");
+    map.put("age", 24);
+    map.put("gender", "male");
+
+    map.forEach((k, v) -> System.out.println(k + ": " + v));
   }
 
 }

@@ -8,10 +8,13 @@ import java.util.Map;
  * @author: jeason·wang
  * @date: 2018-07-23 11:09
  **/
-public class HashMapStudy {
+public class HashMapDemo {
 
+  /**
+   * HashMap: 内部基于一个动态的Node<K,V>数组，不支持线程同步，可以存放一个key为null的键值对，支持多个value为null的键值对
+   * */
   public static void main(String[] args) {
-    Map map = new HashMap(19, 0.8f);
+    Map map = new HashMap();
     for (int i=1; i<12; i++) {
       map.put("key"+i, "value"+i);
     }
