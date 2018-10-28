@@ -27,6 +27,12 @@ import java.util.Set;
  * ③.SelectionKey.OP_CONNECT:对应 00001000，成功建立 TCP 连接
  * ④.SelectionKey.OP_ACCEPT: 对应 00010000，接受 TCP 连接
  * 3.调用 select() 方法获取通道信息。用于判断是否有我们感兴趣的事件已经发生了
+ *
+ *
+ * 4.Selector中维护3个特别重要的SelectionKey集合，分别是
+ * ①.keys：所有注册到Selector的Channel所表示的SelectionKey都会存在于该集合中。keys元素的添加会在Channel注册到Selector时发生。
+ * ②.selectedKeys：该集合中的每个SelectionKey都是其对应的Channel在上一次操作selection期间被检查到至少有一种SelectionKey中所感兴趣的操作已经准备好被处理。该集合是keys的一个子集。
+ * ③.cancelledKeys：执行了取消操作的SelectionKey会被放入到该集合中。该集合是keys的一个子集。
  */
 public class SelectorDemo {
     private static final int _PORT = 8888;
