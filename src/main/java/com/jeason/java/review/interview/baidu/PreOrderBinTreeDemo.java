@@ -1,5 +1,7 @@
 package com.jeason.java.review.interview.baidu;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -35,6 +37,23 @@ public class PreOrderBinTreeDemo {
                     right = node;
                 } else {
                     right.insertNode(node);
+                }
+            }
+        }
+
+        // 层序遍历
+        public void levelOrder() {
+            TreeNode current = this;
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.offer(current);
+            while (!queue.isEmpty()) {
+                current = queue.poll();
+                System.out.printf("%2d\t", current.value);
+                if (current.left != null) {
+                    queue.offer(current.left);
+                }
+                if (current.right != null) {
+                    queue.offer(current.right);
                 }
             }
         }
@@ -122,7 +141,7 @@ public class PreOrderBinTreeDemo {
     }
 
     public static void main(String[] args) {
-        int[] nums = {3, 7, 2, 4, 6};
+        int[] nums = {5, 3, 7, 2, 4, 6};
         TreeNode root = new TreeNode(5);
         for (int n : nums) {
             root.insertNode(new TreeNode(n));
@@ -132,15 +151,16 @@ public class PreOrderBinTreeDemo {
         root.preOrderByRecursive(); // 先序递归遍历
         System.out.printf("\n先序非递归遍历：\t");
         root.preOrderNonRecursive(); //先序非递归遍历
-
         System.out.println();
 
         System.out.printf("\n中序递归遍历：\t");
         root.midOrderByRecursive();
         System.out.printf("\n中序非递归遍历：\t");
         root.midOrderNonRecursive();
-
         System.out.println();
 
+        System.out.printf("\n层序遍历：\t");
+        root.levelOrder();
+        System.out.println();
     }
 }
