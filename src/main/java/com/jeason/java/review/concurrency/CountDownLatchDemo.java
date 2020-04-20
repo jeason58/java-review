@@ -14,7 +14,7 @@ public class CountDownLatchDemo {
 
     public static void main(String[] args) {
         CountDownLatch latch = new CountDownLatch(ThreadNum);
-        for (int i=0; i<ThreadNum; i++) {
+        for (int i = 0; i < ThreadNum; i++) {
             new Thread(() -> {
                 try {
                     count.incrementAndGet();
@@ -28,9 +28,10 @@ public class CountDownLatchDemo {
 
         try {
             latch.await();
-            System.out.println("count: " + count);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        System.out.println("count: " + count);
     }
 }

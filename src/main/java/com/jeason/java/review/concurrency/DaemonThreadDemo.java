@@ -2,7 +2,7 @@ package com.jeason.java.review.concurrency;
 
 
 /**
- * @description: 在主线程推出之前，不会关心daemon线程的finally代码是否被执行，会直接退出
+ * @description: 在主线程退出之前，不会关心daemon线程的finally代码是否被执行，会直接退出
  * @author: jeason·wang
  * @date: 2018-07-31 18:22
  **/
