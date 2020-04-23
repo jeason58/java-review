@@ -26,20 +26,18 @@ public class BinarySearchDemo {
     }
 
     public static int binarySearchByRecursive(int[] arr, int key, int start, int end) {
-        if (arr == null || start < 0 || end >= arr.length) {
+        if (arr == null || start < 0 || end >= arr.length || start > end) {
             return -1;
         }
-        if (start < end) {
-            int middle = (start + end) / 2;
-            if (arr[middle] == key) {
-                return middle;
-            } else if (arr[middle] < key) {
-                return binarySearchByRecursive(arr, key, middle+1, end);
-            } else {
-                return binarySearchByRecursive(arr, key, start, middle-1);
-            }
+
+        int middle = (start + end) / 2;
+        if (arr[middle] == key) {
+            return middle;
+        } else if (arr[middle] < key) {
+            return binarySearchByRecursive(arr, key, middle+1, end);
+        } else {
+            return binarySearchByRecursive(arr, key, start, middle-1);
         }
-        return -1;
     }
 
     public static void main(String[] args) {

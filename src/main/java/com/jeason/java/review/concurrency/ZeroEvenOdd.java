@@ -12,6 +12,12 @@ public class ZeroEvenOdd {
         this.n = n;
     }
 
+    private static class IntConsumer {
+        void accept(int x) {
+            System.out.printf("%d", x);
+        }
+    }
+
     // printNumber.accept(x) outputs "x", where x is an integer.
     public void zero(IntConsumer printNumber) throws InterruptedException {
         for (int i = 1; i <= n; i++) {
@@ -42,46 +48,31 @@ public class ZeroEvenOdd {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        ZeroEvenOdd zeo = new ZeroEvenOdd(6);
+        ZeroEvenOdd zeo = new ZeroEvenOdd(9);
         IntConsumer printer = new IntConsumer();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    zeo.zero(printer);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        new Thread(() -> {
+            try {
+                zeo.zero(printer);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }).start();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    zeo.even(printer);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        new Thread(() ->{
+            try {
+                zeo.even(printer);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }).start();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    zeo.odd(printer);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        new Thread(() -> {
+            try {
+                zeo.odd(printer);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }).start();
-    }
-}
-
-class IntConsumer {
-    void accept(int x) {
-        System.out.printf("%d", x);
     }
 }

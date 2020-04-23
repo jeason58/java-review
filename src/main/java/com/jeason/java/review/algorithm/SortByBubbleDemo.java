@@ -5,7 +5,7 @@ package com.jeason.java.review.algorithm;
  * @Date: 2018/10/22 21:34
  * @Description: 冒泡排序算法实现，稳定，时间复杂度 = O(N²)
  */
-public class BubbleSortDemo {
+public class SortByBubbleDemo {
 
     // 冒泡排序（时间复杂度 = O(N²)）
     public static void bubbleSort(int[] arr) {
@@ -28,6 +28,6 @@ public class BubbleSortDemo {
     public static void main(String[] args) {
         int[] A = {4, 9, 9, 3, 8, 5, 2, 7};
         bubbleSort(A);
-        QuickSortDemo.printArray(A);
+        SortByQuickDemo.printArray(A);
     }
 }

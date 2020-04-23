@@ -5,7 +5,7 @@ package com.jeason.java.review.algorithm;
  * @Date: 2018/10/22 21:06
  * @Description: 选择排序算法实现，不稳定，时间复杂度 = O(N²)
  */
-public class SelectionSortDemo {
+public class SortBySelectDemo {
     // 选择排序（时间复杂度 = O(N²)）
     public static void selectionSort(int[] arr) {
         if (arr == null || arr.length < 2) {
@@ -29,7 +29,7 @@ public class SelectionSortDemo {
         int[] A = {4, 8, 5, 9, 3, 2, 6, 7};
         selectionSort(A);
         System.out.println("after sort: ");
-        QuickSortDemo.printArray(A);
+        SortByQuickDemo.printArray(A);
     }
 
 }
