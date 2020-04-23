@@ -21,13 +21,11 @@ public class BinaryTreeLevelScanDemo {
 
         public void insertNode(TreeNode node) {  // 插入树节点
             if (this.value == node.value) {
-                TreeNode leftChild = this.left;
+                node.left = this.left;
                 this.left = node;
-                node.left = leftChild;
             } else if (this.value > node.value) {
                 if (this.left == null) {
                     this.left = node;
-                    return;
                 } else {
                     this.left.insertNode(node);
                 }
@@ -39,6 +37,7 @@ public class BinaryTreeLevelScanDemo {
                 }
             }
         }
+
         // 层序遍历当前二叉树
         public void levelOrderTree() {
             Queue<TreeNode> queue = new LinkedList<>();
@@ -77,8 +76,8 @@ public class BinaryTreeLevelScanDemo {
         }
 
         root.levelOrderTree();
-        System.out.println("-------------------");
+        System.out.println("\n------------------------------");
         root.preOrderTree();
-        System.out.println("-------------------");
+        System.out.println("\n------------------------------");
     }
 }
