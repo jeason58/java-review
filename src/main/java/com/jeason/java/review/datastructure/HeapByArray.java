@@ -1,8 +1,6 @@
 package com.jeason.java.review.datastructure;
 
 
-import java.util.LinkedList;
-
 /**
  * 基于数组实现堆结构（大顶堆和小顶堆）
  * 堆的定义：
@@ -16,7 +14,6 @@ import java.util.LinkedList;
  *
  * */
 
-//TODO: 待完善，堆结构不正确
 public class HeapByArray {
     int[] heapTab;
     int cap;
@@ -60,12 +57,13 @@ public class HeapByArray {
         return count;
     }
 
-    private void heapify(int targetIndex) {
+    private void heapify(int index) {
         int tmp;
-        while (heapTab[targetIndex/2] > 0 && heapTab[targetIndex] > heapTab[targetIndex/2]) {
-            tmp = heapTab[targetIndex];
-            heapTab[targetIndex] = heapTab[targetIndex/2];
-            heapTab[targetIndex/2] = tmp;
+        while (heapTab[index/2] > 0 && heapTab[index] > heapTab[index/2]) {
+            tmp = heapTab[index];
+            heapTab[index] = heapTab[index/2];
+            heapTab[index/2] = tmp;
+            index /= 2;
         }
     }
 
@@ -78,9 +76,9 @@ public class HeapByArray {
 
 
     public static void main(String[] args) {
-        HeapByArray heap = new HeapByArray(8);
+        HeapByArray heap = new HeapByArray(9);
 
-        int[] arr = new int[]{3, 5, 7, 2, 4, 9, 1, 6};
+        int[] arr = new int[]{3, 5, 7, 2, 8, 4, 9, 1, 6};
         for (int n : arr) {
             heap.insert(n);
         }

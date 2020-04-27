@@ -1,7 +1,8 @@
 package com.jeason.java.review.datastructure;
 
-import java.util.HashMap;
-
+/**
+ * 基于数组实现一个栈
+ * */
 public class StackByArray {
     int[] stack = null;
     int count;
