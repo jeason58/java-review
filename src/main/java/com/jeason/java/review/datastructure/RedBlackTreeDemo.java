@@ -1,4 +1,4 @@
-package com.jeason.java.review.algorithm;
+package com.jeason.java.review.datastructure;
 
 
 /**
