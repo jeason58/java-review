@@ -6,7 +6,7 @@ package com.jeason.java.review.algorithm;
  * @Description: 插入排序算法实现，稳定，时间复杂度 = O(N²)
  */
 
-public class SortByInsertDemo {
+public class SortByInsert {
 
     // 思想：类似于抓扑克牌，左手的牌是已排好序的，右手的牌是未排好序的，
     // 将第一张牌作为左手的已经排好序牌，每次从右手取一张牌，然后依次从右往左与左手的牌比较，
@@ -32,6 +32,6 @@ public class SortByInsertDemo {
         int[] A = {5, 8, 4, 9, 6, 3, 2, 7, 1};
         insertionSort(A);
         System.out.println("after sort: ");
-        SortByQuickDemo.printArray(A);
+        SortByQuick.printArray(A);
     }
 }

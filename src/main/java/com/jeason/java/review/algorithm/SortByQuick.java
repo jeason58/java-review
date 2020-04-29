@@ -5,7 +5,7 @@ package com.jeason.java.review.algorithm;
  * @Date: 2018/10/22 19:42
  * @Description: 快速排序算法实现，不稳定，时间复杂度 = O(N*logN)
  */
-public class SortByQuickDemo {
+public class SortByQuick {
     public static void quickSort(int[] arr, int left, int right) {
         if (arr == null || left > right || left < 0 || right >= arr.length) {
             return;

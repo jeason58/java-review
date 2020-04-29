@@ -24,6 +24,19 @@ public class HeapByArray {
         this(DEFAULT_HEAP_CAP);
     }
 
+    public static HeapByArray buildHeap(int[] nums) {
+        if (nums == null || nums.length < 1) {
+            return null;
+        }
+
+        HeapByArray heap = new HeapByArray(nums.length);
+        for (int i = 0; i < nums.length; i++) {
+            heap.insert(nums[i]);
+        }
+
+        return heap;
+    }
+
     public HeapByArray(int cap) {
         if (cap <= 0) {
             cap = DEFAULT_HEAP_CAP;
@@ -48,7 +61,7 @@ public class HeapByArray {
         }
 
         heapTab[++count] = val;
-        heapify(count);
+        heapifyRise(count);
 
         return count;
     }
@@ -57,7 +70,8 @@ public class HeapByArray {
         return count;
     }
 
-    private void heapify(int index) {
+    //自底向上"堆化"
+    private void heapifyRise(int index) {
         int tmp;
         while (heapTab[index/2] > 0 && heapTab[index] > heapTab[index/2]) {
             tmp = heapTab[index];
@@ -72,6 +86,35 @@ public class HeapByArray {
             System.out.printf("%2d\t", heapTab[i]);
         }
         System.out.println();
+    }
+
+    public void sort() {
+        int k = count;
+        while (k > 1) {
+            int tmp = heapTab[1];
+            heapTab[1] = heapTab[k];
+            heapTab[k--] = tmp;
+
+            int i = 1;
+            while (true) {
+                int maxI = i;
+                if (2*i <= k && heapTab[maxI] < heapTab[2*i]) {
+                    maxI = 2*i;
+                }
+                if (2*i+1 <= k && heapTab[maxI] < heapTab[2*i+1]) {
+                    maxI = 2*i + 1;
+                }
+
+                if (maxI == i) {
+                    break;
+                } else {
+                    tmp = heapTab[i];
+                    heapTab[i] = heapTab[maxI];
+                    heapTab[maxI] = tmp;
+                    i = maxI;
+                }
+            }
+        }
     }
 
 

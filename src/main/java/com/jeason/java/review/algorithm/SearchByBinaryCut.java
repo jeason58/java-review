@@ -6,7 +6,7 @@ package com.jeason.java.review.algorithm;
  * @Date: 2018/10/22 20:36
  * @Description: 二分查找算法的递归与非递归实现
  */
-public class BinarySearchDemo {
+public class SearchByBinaryCut {
     public static int binarySearch(int[] arr, int key) {
         if (arr == null) {
             return -1;
