@@ -93,6 +93,16 @@ public class RomanNumberGenerator {
         return sb.toString();
     }
 
+
+
+    /**
+     * RomanToInt：给定一个罗马数字如何转换成int数
+     * 如：MCMXCIV ——> 1994
+     * 思路：从左至右遍历字符串，只要左边字符代表的数字小于右边字符代表的数字，则减去坐标字符代表的数字，否则加上；
+     * */
+    //TODO: 实现
+    //code here...
+
     public static void main(String[] args) {
         RomanNumberGenerator rng = new RomanNumberGenerator();
         int num = 1994;
